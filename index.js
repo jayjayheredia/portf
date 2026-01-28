@@ -59,21 +59,25 @@ function renderSkills() {
     container.innerHTML = skills.map(s => `<span class="tag">${s}</span>`).join('');
 }
 
+// Agrega esto dentro de la función renderProjects() para mejorar el HTML generado:
 function renderProjects() {
     const container = document.getElementById('projects-grid');
     container.innerHTML = projects.map(p => `
         <article class="project-card reveal">
             <img src="${p.img}" class="project-card__img" alt="${p.title_en}">
             <div class="project-card__content">
-                <div class="project-card__tags">
+                <div class="mb-3">
                     ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
                 </div>
-                <h3>${currentLang === 'en' ? p.title_en : p.title_es}</h3>
-                <p>${currentLang === 'en' ? p.desc_en : p.desc_es}</p>
+                <h3 class="font-bold text-xl">${currentLang === 'en' ? p.title_en : p.title_es}</h3>
+                <p class="text-muted text-sm mb-4">${currentLang === 'en' ? p.desc_en : p.desc_es}</p>
+                <div class="flex gap-4 mt-auto">
+                    <a href="#" class="text-accent font-bold text-sm hover:underline">Live Demo <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    <a href="#" class="text-muted font-bold text-sm hover:underline">GitHub <i class="fa-brands fa-github ml-1"></i></a>
+                </div>
             </div>
         </article>
     `).join('');
-    // Re-ejecutar el observador para los nuevos elementos renderizados
     setupScrollReveal();
 }
 
