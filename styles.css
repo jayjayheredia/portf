@@ -47,7 +47,7 @@ body {
 .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding-top: 80px; }
 .badge { background: var(--accent-gradient); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 .hero__title { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.1; margin: 1.5rem 0; }
-.text-gradient { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.text-gradient { background: var(--accent-gradient); background-clip: text; -webkit-text-fill-color: transparent; }
 .hero__desc { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem; }
 .hero__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
@@ -133,6 +133,6 @@ body {
 /* Gradiente para el nombre en el footer */
 .text-gradient {
     background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
