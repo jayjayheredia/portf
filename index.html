@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julian Heredia | FullStack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5cbb027761.js" crossorigin="anonymous"></script>
@@ -24,12 +29,12 @@
                 <li><a href="#about" data-i18n="nav_about">Sobre Mí</a></li>
                 <li><a href="#projects" data-i18n="nav_projects">Proyectos</a></li>
                 <li><button id="theme-btn" class="nav__icon-btn"><i class="fa-solid fa-moon"></i></button></li>
-                <li><button onclick="toggleLanguage()" id="btnIdioma" class="nav__lang-btn">ES</button></li>    
+                <li><button onclick="toggleLanguage()" id="btnIdioma" class="nav__lang-btn">EN</button></li>    
             </ul>
 
             <div class="md:hidden flex items-center gap-4">
                 <button id="theme-btn-mobile" onclick="document.getElementById('theme-btn').click()"><i class="fa-solid fa-moon"></i></button>
-                <button onclick="toggleLanguage()" class="nav__lang-btn">ES</button>
+                <button onclick="toggleLanguage()" class="nav__lang-btn-mobile nav__lang-btn">EN</button>
             </div>
         </nav>
     </header>
@@ -37,90 +42,89 @@
     <main>
         <section class="hero container reveal">
             <div class="hero__content text-center">
-                <span class="badge" data-i18n="hero_subtitle">FullStack Web Developer</span>
+                <span class="badge" data-i18n="hero_subtitle">Desarrollador Web FullStack</span>
                 <h1 class="hero__title">Julian Jonathan <span class="text-gradient">Heredia</span></h1>
-                <p class="hero__desc">Transformando ideas en experiencias digitales de alto impacto.</p>
+                <p class="hero__desc" data-i18n="hero__desc">Creo soluciones web modernas y funcionales que ayudan a los negocios a prosperar en línea.</p>
                 <div class="hero__actions">
                     <a href="#projects" class="btn-primary" data-i18n="hero_btn">Ver Trabajo</a>
-                    <a href="#" class="btn-secondary">Descargar CV</a>
                 </div>
             </div>
         </section>
 
-<section id="about" class="py-20 container reveal">
-    <div class="section-header text-center mb-16">
-        <h2 class="section-title inline-block relative text-4xl font-extrabold" data-i18n="about_title">Sobre Mí</h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="about__content bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800">
-            <div class="flex items-center gap-4 mb-6">
-                <div class="w-12 h-12 bg-blue-600/10 rounded-full flex items-center justify-center text-blue-600">
-                    <i class="fa-solid fa-user-tie text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold" data-i18n="about_title">Mi Perfil</h3>
+        <section id="about" class="py-20 container reveal">
+            <div class="section-header text-center mb-16">
+                <h2 class="section-title inline-block relative text-4xl font-extrabold" data-i18n="about_title">Sobre Mí</h2>
             </div>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6" data-i18n="about_p1">
-                Soy un desarrollador apasionado por crear soluciones que combinan un backend sólido con interfaces de usuario intuitivas y modernas.
-            </p>
-            <div class="space-y-4">
-                <div class="flex items-center gap-3 text-sm font-medium">
-                    <i class="fa-solid fa-location-dot text-blue-500"></i>
-                    <span>Bahía Blanca, Argentina</span>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="about__content bg-[var(--card-bg)] p-8 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-blue-600/10 rounded-full flex items-center justify-center text-blue-600">
+                            <i class="fa-solid fa-user-tie text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold" data-i18n="about_title">Mi Perfil</h3>
+                    </div>
+                    <p class="text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="about_p1">
+                        Soy un desarrollador apasionado por crear soluciones que combinan un backend sólido con interfaces de usuario intuitivas y modernas.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-sm font-medium">
+                            <i class="fa-solid fa-location-dot text-blue-500"></i>
+                            <span>Bahía Blanca, Argentina</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm font-medium">
+                            <i class="fa-solid fa-code text-blue-500"></i>
+                            <span data-i18n="more_p">Especialista en React & Node.js</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center gap-3 text-sm font-medium">
-                    <i class="fa-solid fa-code text-blue-500"></i>
-                    <span>Especialista en React & Node.js</span>
+
+                <div class="about__skills bg-[var(--card-bg)] p-8 rounded-3xl border border-dashed border-slate-300 dark:border-slate-700">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-blue-500"></i> 
+                        <span data-i18n="skills_title">Habilidades</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-3" id="skills-container"></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="about__skills bg-slate-100 dark:bg-slate-800/50 p-8 rounded-3xl border border-dashed border-slate-300 dark:border-slate-700">
-            <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                <i class="fa-solid fa-layer-group text-blue-500"></i> 
-                <span data-i18n="skills_title">Habilidades</span>
-            </h3>
-            <div class="flex flex-wrap gap-3" id="skills-container">
-                </div>
-        </div>
-    </div>
-</section>
-
-        <section id="projects" class="projects container">
-            <h2 class="section-title reveal" data-i18n="projects_title">Proyectos Destacados</h2>
-            <div class="projects__grid" id="projects-grid">
-                </div>
+        <section id="projects" class="projects container py-20">
+            <h2 class="section-title reveal text-center mb-10" data-i18n="projects_title">Proyectos Destacados</h2>
+            <div class="projects__grid" id="projects-grid"></div>
         </section>
     </main>
 
-<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
-    <div class="container py-12">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="footer__brand text-center md:text-left">
-                <h3 class="text-xl font-black tracking-tighter text-gradient">JULIAN HEREDIA</h3>
-                <p class="text-sm text-slate-500 mt-1" data-i18n="hero_subtitle">FullStack Web Developer</p>
-            </div>
+    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-[var(--card-bg)]">
+        <div class="container py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="footer__brand text-center md:text-left">
+                    <h3 class="text-xl font-black tracking-tighter text-gradient">JULIAN HEREDIA</h3>
+                    <p class="text-sm text-slate-500 mt-1" data-i18n="hero_subtitle">Desarrollador Web FullStack</p>
+                </div>
 
-            <div class="footer__social flex gap-4">
-                <a href="#" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-linkedin-in text-lg"></i>
-                </a>
-                <a href="#" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-900 hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-github text-lg"></i>
-                </a>
-                <a href="#" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-green-500 hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                </a>
+                <div class="footer__social flex gap-4">
+                    <a href="https://www.linkedin.com/in/julianheredia/" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="https://github.com/jayjayheredia" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-900 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.instagram.com/webjjh/" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://wa.me/+5492915738123" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-green-500 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-900 text-center">
+                <p class="text-xs text-slate-500 uppercase tracking-widest">
+                    &copy; 2026 Julian Heredia. <span data-i18n="copy">Todos los derechos reservados</span>
+                </p>
             </div>
         </div>
-
-        <div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-900 text-center">
-            <p class="text-xs text-slate-500 uppercase tracking-widest">
-                &copy; 2026 Julian Heredia. <span data-i18n="copy">Todos los derechos reservados</span>
-            </p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="index.js"></script>
 </body>
