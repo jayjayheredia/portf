@@ -85,12 +85,12 @@ const i18n = {
     en: {
         nav_about: "About", nav_projects: "Projects", hero_subtitle: "FullStack Web Developer", hero__desc: "I create modern, functional web solutions that help businesses thrive online.",
         hero_btn: "View Work", about_title: "About Me", about_p1: "I build modern web solutions combining a solid backend with intuitive interfaces.",
-        skills_title: "Skills", projects_title: "My Projects", copy: "All Rights Reserved", more_p: "Specialist in React & Node.js"
+        skills_title: "Skills", projects_title: "My Projects", copy: "All Rights Reserved", more_p: "Specialist in delivering custom, functional projects that meet your goals"
     },
     es: {
         nav_about: "Sobre Mí", nav_projects: "Proyectos", hero_subtitle: "Desarrollador Web FullStack", hero__desc: "Creo soluciones web modernas y funcionales que ayudan a los negocios a prosperar en línea.",
         hero_btn: "Ver Trabajo", about_title: "Sobre Mí", about_p1: "Soy un desarrollador apasionado por crear soluciones que combinan un backend sólido con interfaces modernas.",
-        skills_title: "Habilidades", projects_title: "Mis Proyectos", copy: "Todos los derechos reservados", more_p: "Especialista en React & Node.js"  
+        skills_title: "Habilidades", projects_title: "Mis Proyectos", copy: "Todos los derechos reservados", more_p: "Especialista en cumplir tus objetivos con proyectos personalizados y funcionales"  
     }
 };
 
