@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Julian Heredia — Desarrollador Web FullStack en Bahía Blanca, Argentina. Creo landing pages, e-commerce y sistemas a medida con React y Node.js.">
+    <meta property="og:title" content="Julian Heredia | Desarrollador Web FullStack">
+    <meta property="og:description" content="Landing pages, e-commerce y sistemas a medida con React y Node.js.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#2563eb">
     <title>Julian Heredia | FullStack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,29 +19,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5cbb027761.js" crossorigin="anonymous"></script>
 </head>
-<body class="light-theme">
-    
+<body>
+
     <header class="header">
         <nav class="nav container">
             <div class="nav__logo">
                 <div class="logo-wrapper">
-                    <img src="images/logo.png" alt="Julian" class="nav__logo-img">
+                    <img src="images/logo.png" alt="Julian Heredia" class="nav__logo-img">
                 </div>
                 <span class="nav__logo-name">Julian Heredia</span>
             </div>
-            
-            <ul class="nav__list hidden md:flex">
+
+            <ul class="nav__list hidden lg:flex">
                 <li><a href="#about" data-i18n="nav_about">Sobre Mí</a></li>
+                <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
                 <li><a href="#projects" data-i18n="nav_projects">Proyectos</a></li>
-                <li><button id="theme-btn" class="nav__icon-btn"><i class="fa-solid fa-moon"></i></button></li>
-                <li><button onclick="toggleLanguage()" id="btnIdioma" class="nav__lang-btn">EN</button></li>    
+                <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                <li><button id="theme-btn" class="nav__icon-btn" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></li>
+                <li><button onclick="toggleLanguage()" id="btnIdioma" class="nav__lang-btn">EN</button></li>
             </ul>
 
-            <div class="md:hidden flex items-center gap-4">
-                <button id="theme-btn-mobile" onclick="document.getElementById('theme-btn').click()"><i class="fa-solid fa-moon"></i></button>
+            <div class="lg:hidden flex items-center gap-3">
+                <button id="theme-btn-mobile" class="nav__icon-btn" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
                 <button onclick="toggleLanguage()" class="nav__lang-btn-mobile nav__lang-btn">EN</button>
+                <button id="menu-btn" class="nav__icon-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </nav>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#about" data-i18n="nav_about">Sobre Mí</a>
+            <a href="#services" data-i18n="nav_services">Servicios</a>
+            <a href="#projects" data-i18n="nav_projects">Proyectos</a>
+            <a href="#contact" data-i18n="nav_contact">Contacto</a>
+        </div>
     </header>
 
     <main>
@@ -47,6 +64,7 @@
                 <p class="hero__desc" data-i18n="hero__desc">Creo soluciones web modernas y funcionales que ayudan a los negocios a prosperar en línea.</p>
                 <div class="hero__actions">
                     <a href="#projects" class="btn-primary" data-i18n="hero_btn">Ver Trabajo</a>
+                    <a href="#contact" class="btn-secondary" data-i18n="hero_btn2">Hablemos de tu Proyecto</a>
                 </div>
             </div>
         </section>
@@ -62,7 +80,7 @@
                         <div class="w-12 h-12 bg-blue-600/10 rounded-full flex items-center justify-center text-blue-600">
                             <i class="fa-solid fa-user-tie text-xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold" data-i18n="about_title">Mi Perfil</h3>
+                        <h3 class="text-2xl font-bold" data-i18n="profile_title">Mi Perfil</h3>
                     </div>
                     <p class="text-[var(--text-muted)] leading-relaxed mb-6" data-i18n="about_p1">
                         Soy un desarrollador apasionado por crear soluciones que combinan un backend sólido con interfaces de usuario intuitivas y modernas.
@@ -74,14 +92,14 @@
                         </div>
                         <div class="flex items-center gap-3 text-sm font-medium">
                             <i class="fa-solid fa-code text-blue-500"></i>
-                            <span data-i18n="more_p">Especialista en React & Node.js</span>
+                            <span data-i18n="more_p">Especialista en cumplir tus objetivos con proyectos personalizados y funcionales</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="about__skills bg-[var(--card-bg)] p-8 rounded-3xl border border-dashed border-slate-300 dark:border-slate-700">
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-layer-group text-blue-500"></i> 
+                        <i class="fa-solid fa-layer-group text-blue-500"></i>
                         <span data-i18n="skills_title">Habilidades</span>
                     </h3>
                     <div class="flex flex-wrap gap-3" id="skills-container"></div>
@@ -89,13 +107,35 @@
             </div>
         </section>
 
+        <section id="services" class="services container py-20 reveal">
+            <h2 class="section-title text-center mb-16" data-i18n="services_title">¿En qué puedo ayudarte?</h2>
+            <div class="services__grid" id="services-grid"></div>
+        </section>
+
         <section id="projects" class="projects container py-20">
             <h2 class="section-title reveal text-center mb-10" data-i18n="projects_title">Proyectos Destacados</h2>
             <div class="projects__grid" id="projects-grid"></div>
         </section>
+
+        <section id="contact" class="contact container py-20 reveal">
+            <div class="contact__box">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4" data-i18n="contact_title">¿Tenés un proyecto en mente?</h2>
+                <p class="text-[var(--text-muted)] max-w-xl mx-auto mb-8" data-i18n="contact_desc">
+                    Contame qué necesitás y te respondo con una propuesta clara, sin vueltas.
+                </p>
+                <div class="contact__actions">
+                    <a href="https://wa.me/+5492915651773" class="btn-primary" target="_blank">
+                        <i class="fa-brands fa-whatsapp mr-2"></i><span data-i18n="contact_whatsapp">Escribime por WhatsApp</span>
+                    </a>
+                    <a href="mailto:julian.j.heredia@gmail.com" class="btn-secondary">
+                        <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="contact_email">Enviar un Email</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-[var(--card-bg)]">
+    <footer class="mt-10 border-t border-slate-200 dark:border-slate-800 bg-[var(--card-bg)]">
         <div class="container py-12">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="footer__brand text-center md:text-left">
@@ -104,16 +144,16 @@
                 </div>
 
                 <div class="footer__social flex gap-4">
-                    <a href="https://www.linkedin.com/in/julianheredia/" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    <a href="https://www.linkedin.com/in/julianheredia/" class="social-icon" aria-label="LinkedIn">
                         <i class="fa-brands fa-linkedin-in text-lg"></i>
                     </a>
-                    <a href="https://github.com/jayjayheredia" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-900 hover:text-white transition-all duration-300">
+                    <a href="https://github.com/jayjayheredia" class="social-icon social-icon--dark" aria-label="GitHub">
                         <i class="fa-brands fa-github text-lg"></i>
                     </a>
-                    <a href="https://www.instagram.com/webjjh/" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    <a href="https://www.instagram.com/webjjh/" class="social-icon" aria-label="Instagram">
                         <i class="fa-brands fa-instagram text-lg"></i>
                     </a>
-                    <a href="https://wa.me/+5492915738123" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-green-500 hover:text-white transition-all duration-300">
+                    <a href="https://wa.me/+5492915651773" class="social-icon social-icon--whatsapp" aria-label="WhatsApp">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                     </a>
                 </div>
