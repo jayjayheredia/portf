@@ -2,8 +2,41 @@
 const skills = ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "Express", "MongoDB", "Git", "Responsive Design"];
 
 const projects = [
-    {
+     {
         id: 1,
+        title_es: "FIdEO",
+        title_en: "FIdEO",
+        desc_es: "Página de una feria online, proyecto personal, con venta al público y panel de administración.",
+        desc_en: "Online fair page, personal project, with public sales and admin panel.",
+        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Node.js", "Express", "MongoDB", "CRUD"],
+        img: "images/fideo.png",
+        liveDemo: "https://www.fideobahia.com.ar/",
+        github: "https://www.fideobahia.com.ar/"
+    },
+    {
+        id: 2,
+        title_es: "Landing Page Cafe Simple ",
+        title_en: "Simple Cafe Landing Page",
+        desc_es: "Página presentación para una Cafeteria. Con formulario de contacto y mapa de ubicación.",
+        desc_en: "Landing page for a coffee shop. With contact form and location map.",
+        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+        img: "images/cafe1.png",
+        liveDemo: "https://landingcoffejay.netlify.app/",
+        github: "https://github.com/jayjayheredia/landingcafe"
+    },
+    {
+        id: 3,
+        title_es: "Landing Page Cafe Simple con más funcionalidades",
+        title_en: "Simple Cafe Landing Page with more features",
+        desc_es: "Página presentación para una Cafeteria. Con formulario de contacto y mapa de ubicación.",
+        desc_en: "Landing page for a coffee shop. With contact form and location map.",
+        tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+        img: "images/cafe2.png",
+        liveDemo: "https://landingcoffejjh.netlify.app/",
+        github: "https://github.com/jayjayheredia/landingcafe2"
+    },
+    {
+        id: 4,
         title_es: "Taller Amodeo",
         title_en: "Amodeo's Garage",
         desc_es: "Página presentación para un taller de electricidad automotriz.",
@@ -14,7 +47,7 @@ const projects = [
         github: "https://github.com/jayjayheredia/taller"
     },
     {
-        id: 2,
+        id: 5,
         title_es: "Exabyte Tech",
         title_en: "Exabyte Tech",
         desc_es: "Página presentación para una empresa de tecnología. Reparación y venta de insumos",
@@ -25,7 +58,7 @@ const projects = [
         github: "https://github.com/jayjayheredia/exabyte"
     },
     {
-        id: 3,
+        id: 6,
         title_es: "Api & Firebase",
         title_en: "API & Firebase",
         desc_es: "Página que demuestra el uso de APIs y un Crud sencillo en Firebase.",
@@ -36,7 +69,7 @@ const projects = [
         github: "https://github.com/jayjayheredia/apiydb"
     },
     {
-        id: 4,
+        id: 7,
         title_es: "Tatuajes RedFox",
         title_en: "RedFox Tattoos",
         desc_es: "Página de presentación con la posibilidad de solicitar turnos por fecha para una empresa de tatuajes.",
@@ -47,7 +80,7 @@ const projects = [
         github: "https://github.com/jayjayheredia/redfox"
     },
     {
-        id: 5,
+        id: 8,
         title_es: "Cabañas y Descanso",
         title_en: "Cabins and Rest",
         desc_es: "Página de presentación para una cabaña con formulario para solicitar información.",
@@ -58,7 +91,7 @@ const projects = [
         github: "https://github.com/jayjayheredia/caban"
     },
         {
-        id: 6,
+        id: 9,
         title_es: "Blog Personal",
         title_en: "Personal Blog",
         desc_es: "Página de blog personal con funcionalidades de publicación.",
@@ -69,7 +102,7 @@ const projects = [
         github: "https://github.com/jayjayheredia/"
     },
     {
-        id: 7,
+        id: 10,
         title_es: "Carrito de Compras",
         title_en: "Shopping Cart",
         desc_es: "Página de carrito de compras con funcionalidades de compra.",
